@@ -4,10 +4,8 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Creates a schema object
-var CommentSchema = new Schema({
-  // `title` is of type String
+var CommentSchema = new Schema({  
   title: String,
-  // `body` is of type String
   body: String
 });
 
