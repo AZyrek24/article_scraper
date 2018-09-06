@@ -62,13 +62,21 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/saved", function(req, res) {
-    db.Article.find({saved: true}).then(function(dbArticles) {
-      console.log("DOCS with value of true", dbArticles);
+  app.get("/saved/:id", function(req, res) {
+    var request = req.params.id;
+    var id = {_id: request}
+    db.Article.findOneAndUpdate(id, {$set: {saved: true}}).then(function(dbArticles) {
   
-      res.render("saved", {articles: dbArticles});
+      res.render("index", {dbArticles});
     })
   })
+
+  // app.get("/allSaved", function(req, res) {
+  //   db.Article.find({saved: true}).then(function(dbArticles) {
+  
+  //     res.render("saved", {dbArticles});
+  //   })
+  // })
 
 }
 

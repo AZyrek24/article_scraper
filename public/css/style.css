@@ -22,4 +22,7 @@ button {
   padding: 5px;
   margin: auto;
 }
+a.navbar-brand {
+  color: white;
+}
 
