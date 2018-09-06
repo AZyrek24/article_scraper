@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class = "col-lg-12">
+      <ol>
+        {{#each dbArticle}}
+        <li>
+          <h4>{{title}}</h4>
+          <a href="{{link}}">Link to Article</a>
+          <img src="{{img}}">
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+</div>
