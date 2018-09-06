@@ -37,9 +37,12 @@ module.exports = function (app) {
         result.title = $(this)
           .find("h2.headline")
           .text();
+        result.summary = $(this)
+          .find("p.summary")
+          .text();
         result.link = $(this)
           .find("a.story-link")
-          .attr("href")
+          .attr("href");
         result.img = $(this)
           .find("img")
           .attr("src");
