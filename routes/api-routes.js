@@ -23,7 +23,7 @@ module.exports = function (app) {
   });
   
 
-  // GET route scrapes scienceX website
+  // GET route scrapes NY Times website
   app.get("/scrape", function (req, res) {
     
     axios.get("https://www.nytimes.com/section/us").then(function (response) {
@@ -59,11 +59,16 @@ module.exports = function (app) {
           });
       });
 
-      // If we were able to successfully scrape and save an Article, send a message to the client
-      res.send("Scrape Complete");
     });
   });
 
+  app.get("/saved", function(req, res) {
+    db.Article.find({saved: true}).then(function(dbArticles) {
+      console.log("DOCS with value of true", dbArticles);
+  
+      res.render("saved", {articles: dbArticles});
+    })
+  })
 
 }
 
