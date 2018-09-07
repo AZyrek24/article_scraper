@@ -7,7 +7,7 @@ $(document).ready(function () {
 			method: 'GET',
 			url: "/"
 		}).then(function() {
-			location.reload();			
+			window.location.href = "/";		
 		})
 
   })
@@ -18,7 +18,7 @@ $(document).ready(function () {
 			method: 'GET',
 			url: "/scrape"
 		}).then(function() {
-			location.reload();			
+			window.location.href = "/"			
 		})
 
   })
@@ -29,7 +29,7 @@ $(document).ready(function () {
 			method: 'GET',
 			url: "/allSaved"
 		}).then(function() {
-			location.reload();			
+			window.location.href = "/allSaved";		
 		})
 
   })
@@ -40,7 +40,7 @@ $(document).ready(function () {
 			method: 'GET',
 			url: "/saved/" + event.target.id
 		}).then(function() {
-			location.reload();			
+			window.location.href = "/"		
 		})
 
   })
@@ -51,7 +51,7 @@ $(document).ready(function () {
 			method: 'GET',
 			url: "/clear"
 		}).then(function() {
-			location.reload();			
+			window.location.href = "/"			
 		})
 
   })
