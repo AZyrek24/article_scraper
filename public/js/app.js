@@ -1,5 +1,17 @@
 
 $(document).ready(function () {
+  // Returns to home page, api route runs
+  $("#home-btn").on("click", function (event) {
+    event.preventDefault();
+    $.ajax({
+			method: 'GET',
+			url: "/"
+		}).then(function() {
+			location.reload();			
+		})
+
+  })
+  // Triggers scrape api route
   $("#scrape-btn").on("click", function (event) {
     event.preventDefault();
     $.ajax({
@@ -10,7 +22,7 @@ $(document).ready(function () {
 		})
 
   })
-
+  // Triggers saved api route to display all saved articles
   $("#saved-btn").on("click", function (event) {
     event.preventDefault();
     $.ajax({
@@ -21,9 +33,8 @@ $(document).ready(function () {
 		})
 
   })
-
+  // Triggers save api route which saves this article
   $("body").on("click", ".save-buttons", function (event) {
-    console.log(event);
     event.preventDefault();
     $.ajax({
 			method: 'GET',
@@ -33,12 +44,12 @@ $(document).ready(function () {
 		})
 
   })
-
+  // Triggers clear api route which clears the database of articles
   $("#clear-btn").on("click", function (event) {
     event.preventDefault();
     $.ajax({
 			method: 'GET',
-			url: "/all"
+			url: "/clear"
 		}).then(function() {
 			location.reload();			
 		})

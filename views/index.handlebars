@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-        {{#each dbArticle}}
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{img}}">
-            <div class="card-body">
-              <h5 class="card-text"><a href="{{link}}">{{title}}</a></h5>
-              <p>{{summary}}</p>
-              <button type="button" class="btn btn-dark save-buttons" id={{_id}}>Save Article</button>
-            </div>
-          </div>
-        {{/each}}
+      {{#each dbArticle}}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{img}}">
+        <div class="card-body">
+          <h5 class="card-text"><a href="{{link}}">{{title}}</a></h5>
+          <p>{{summary}}</p>
+          <button type="button" class="btn btn-dark save-buttons" id={{_id}}>Save Article</button>
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 </div>
